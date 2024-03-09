@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "drf-waas"
+version = "0.1.0"
+description = ""
+authors = ["ben <ben@ahnlab.io>"]
+readme = "README.md"
+packages = [{include = "drf_waas"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.3"
+djangorestframework = "^3.14.0"
+pytest = "^8.1.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-django = "^4.8.0"
+model-bakery = "^1.17.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
