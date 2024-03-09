@@ -13,11 +13,16 @@ class WassUser(models.Model):
 
 class Organization(models.Model):
     name = models.CharField(max_length=100)
-    brn = models.CharField(max_length=100)
-    brc = models.CharField(max_length=100)
+    brn = models.CharField(max_length=100, null=True)
+    brc = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["name"]),
+        ]
 
 
 class Role(models.Model):

@@ -20,7 +20,8 @@ def test_list(api_client: APIClient):
 
     response = api_client.get(endpoint)
     assert response.status_code == 200
-    assert len(json.loads(response.content)) == 3
+    response_json = json.loads(response.content)
+    assert len(response_json["results"]) == 3
 
 
 @pytest.mark.django_db

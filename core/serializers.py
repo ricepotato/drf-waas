@@ -9,6 +9,13 @@ class WassUserSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class WaasUserUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.WassUser
+        fields = "__all__"
+        read_only_fields = ["email"]
+
+
 class WaasOrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Organization
