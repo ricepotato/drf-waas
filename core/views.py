@@ -22,7 +22,7 @@ class WaasOrganizationViewsSet(viewsets.ModelViewSet):
 
 class WaasRoleViewSet(viewsets.ModelViewSet):
     queryset = models.Role.objects.all()
-    serializer_class = serializers.WaasRoleSerializer
+    serializer_class = serializers.WaasRoleListSerializer
     # permission_classes = [permissions.IsAuthenticated]
     filterset_fields = ["name", "organization", "user"]
 
